@@ -1,0 +1,144 @@
+<nav
+  [class]="isScrolled ? 'bg-green-700 shadow-lg' : 'bg-transparent'"
+  class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 rounded-b-xl"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <!-- Logo -->
+      <a
+        href="#"
+        (click)="scrollToSection('hero', $event)"
+        class="text-white text-2xl font-bold tracking-tight hover:text-green-200 transition-colors"
+      >
+        ZOOAGRO.COM
+      </a>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center space-x-8">
+        <a
+          href="#quienes-somos"
+          (click)="scrollToSection('quienes-somos', $event)"
+          class="relative flex items-center text-white hover:text-green-200 font-medium transition-colors group"
+        >
+          Quiénes Somos
+          <span
+            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-200 group-hover:w-full transition-all duration-300"
+          ></span>
+        </a>
+
+        <a
+          href="#servicios"
+          (click)="scrollToSection('servicios', $event)"
+          class="relative flex items-center text-white hover:text-green-200 font-medium transition-colors group"
+        >
+          Servicios
+          <span
+            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-200 group-hover:w-full transition-all duration-300"
+          ></span>
+        </a>
+
+        <a
+          href="#proyectos"
+          (click)="scrollToSection('proyectos', $event)"
+          class="relative flex items-center text-white hover:text-green-200 font-medium transition-colors group"
+        >
+          Proyectos
+          <span
+            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-200 group-hover:w-full transition-all duration-300"
+          ></span>
+        </a>
+
+        <a
+          href="#pagos"
+          (click)="scrollToSection('pagos', $event)"
+          class="relative flex items-center text-white hover:text-green-200 font-medium transition-colors group"
+        >
+          Pagos
+          <span
+            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-200 group-hover:w-full transition-all duration-300"
+          ></span>
+        </a>
+
+        <a
+          href="#contacto"
+          (click)="scrollToSection('contacto', $event)"
+          class="ml-4 inline-flex items-center bg-white text-green-700 px-6 h-10 rounded-lg font-semibold hover:bg-green-100 transition-all duration-300 shadow-md"
+        >
+          Contacto
+        </a>
+      </div>
+
+      <!-- Mobile button -->
+      <button
+        class="md:hidden text-white focus:outline-none"
+        (click)="toggleMobileMenu()"
+      >
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          @if (!isMobileMenuOpen) {
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+          } @if (isMobileMenuOpen) {
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"
+          />
+          }
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Navigation -->
+  @if (isMobileMenuOpen) {
+  <div class="md:hidden bg-green-800 border-t border-green-600">
+    <div class="px-4 py-3 space-y-2">
+      <a
+        href="#quienes-somos"
+        (click)="scrollToSection('quienes-somos', $event)"
+        class="block text-white px-3 py-2 rounded hover:bg-green-700"
+      >
+        Quiénes Somos
+      </a>
+      <a
+        href="#servicios"
+        (click)="scrollToSection('servicios', $event)"
+        class="block text-white px-3 py-2 rounded hover:bg-green-700"
+      >
+        Servicios
+      </a>
+      <a
+        href="#proyectos"
+        (click)="scrollToSection('proyectos', $event)"
+        class="block text-white px-3 py-2 rounded hover:bg-green-700"
+      >
+        Proyectos
+      </a>
+      <a
+        href="#pagos"
+        (click)="scrollToSection('pagos', $event)"
+        class="block text-white px-3 py-2 rounded hover:bg-green-700"
+      >
+        Pagos
+      </a>
+      <a
+        href="#contacto"
+        (click)="scrollToSection('contacto', $event)"
+        class="block bg-white text-green-700 px-3 py-2 rounded font-semibold text-center"
+      >
+        Contacto
+      </a>
+    </div>
+  </div>
+  }
+</nav>
